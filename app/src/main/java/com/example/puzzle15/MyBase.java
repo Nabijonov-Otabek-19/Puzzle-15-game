@@ -9,6 +9,7 @@ public class MyBase {
     public static final String LEVEL = "level";
     public static final String TIME = "time";
     public static final String SCORE = "score";
+    public static final String SOUND = "sound";
 
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
@@ -40,5 +41,13 @@ public class MyBase {
 
     public String getScore() {
         return pref.getString(SCORE, "0");
+    }
+
+    public void setSound(boolean is) {
+        editor.putBoolean(SOUND, is).apply();
+    }
+
+    public boolean getSound() {
+        return pref.getBoolean(SOUND, true);
     }
 }

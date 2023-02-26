@@ -1,12 +1,13 @@
-package com.example.puzzle15;
+package com.example.puzzle15.screen;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
+
+import com.example.puzzle15.R;
 
 public class WinActivity extends AppCompatActivity {
 

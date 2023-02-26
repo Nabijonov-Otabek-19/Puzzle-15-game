@@ -1,8 +1,10 @@
-package com.example.puzzle15;
+package com.example.puzzle15.screen;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.puzzle15.R;
 
 public class AboutActivity extends AppCompatActivity {
 

@@ -1,10 +1,13 @@
-package com.example.puzzle15;
+package com.example.puzzle15.screen;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.example.puzzle15.MyBase;
+import com.example.puzzle15.R;
 
 public class RecordsActivity extends AppCompatActivity {
 

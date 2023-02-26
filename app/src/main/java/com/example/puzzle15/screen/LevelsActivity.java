@@ -1,11 +1,15 @@
-package com.example.puzzle15;
+package com.example.puzzle15.screen;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+
+import com.example.puzzle15.R;
+import com.example.puzzle15.screen.levels.EasyLevelActivity;
+import com.example.puzzle15.screen.levels.HardLevelActivity;
+import com.example.puzzle15.screen.levels.MediumLevelActivity;
 
 public class LevelsActivity extends AppCompatActivity {
 

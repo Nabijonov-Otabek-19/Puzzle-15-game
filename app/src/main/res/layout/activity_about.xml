@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_photo2"
     android:gravity="center"
-    tools:context=".AboutActivity">
+    tools:context=".screen.AboutActivity">
 
     <LinearLayout
         android:layout_width="300dp"

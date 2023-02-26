@@ -12,28 +12,28 @@
         android:theme="@style/Theme.Puzzle15"
         tools:targetApi="31">
         <activity
-            android:name=".RecordsActivity"
+            android:name=".screen.RecordsActivity"
             android:exported="false" />
         <activity
-            android:name=".AboutActivity"
+            android:name=".screen.AboutActivity"
             android:exported="false" />
         <activity
-            android:name=".WinActivity"
+            android:name=".screen.WinActivity"
             android:exported="false" />
         <activity
-            android:name=".HardLevelActivity"
+            android:name=".screen.levels.HardLevelActivity"
             android:exported="false" />
         <activity
-            android:name=".LevelsActivity"
+            android:name=".screen.LevelsActivity"
             android:exported="false" />
         <activity
-            android:name=".MediumLevelActivity"
+            android:name=".screen.levels.MediumLevelActivity"
             android:exported="false" />
         <activity
-            android:name=".EasyLevelActivity"
+            android:name=".screen.levels.EasyLevelActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".screen.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

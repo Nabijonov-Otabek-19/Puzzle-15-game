@@ -7,7 +7,7 @@
     android:background="@drawable/bg_photo2"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".AboutActivity">
+    tools:context=".screen.AboutActivity">
 
     <ImageView
         android:layout_width="match_parent"
