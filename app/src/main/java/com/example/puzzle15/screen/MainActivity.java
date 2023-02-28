@@ -20,8 +20,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MyBase myBase = new MyBase(this);
+        MyBase myBase = MyBase.getInstance();
         ImageView sound = findViewById(R.id.btn_sound);
+
+        if (myBase.getSound()) sound.setImageResource(R.drawable.ic_sound);
+        else sound.setImageResource(R.drawable.ic_mute);
 
         sound.setOnClickListener(view -> {
             if (myBase.getSound()) {
@@ -36,8 +39,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_levels).setOnClickListener(view ->
                 startActivity(new Intent(MainActivity.this, LevelsActivity.class)));
 
-        findViewById(R.id.btn_quit).setOnClickListener(view ->
-                MainActivity.this.finishAffinity());
+        findViewById(R.id.btn_quit).setOnClickListener(view -> MainActivity.this.finishAffinity());
 
         findViewById(R.id.btn_about).setOnClickListener(view ->
                 startActivity(new Intent(MainActivity.this, AboutActivity.class)));

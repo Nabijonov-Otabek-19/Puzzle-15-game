@@ -4,10 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.puzzle15.R;
+import com.example.puzzle15.screen.levels.EasyLevelActivity;
+import com.example.puzzle15.screen.levels.HardLevelActivity;
+import com.example.puzzle15.screen.levels.MediumLevelActivity;
 
 public class WinActivity extends AppCompatActivity {
 
@@ -31,9 +35,26 @@ public class WinActivity extends AppCompatActivity {
         TextView score2 = findViewById(R.id.txt_score);
         score2.setText(score1);
 
-        findViewById(R.id.btn_back2menu).setOnClickListener(view ->
-                startActivity(new Intent(WinActivity.this, MainActivity.class)));
+        findViewById(R.id.btn_back2menu).setOnClickListener(view -> {
+            startActivity(new Intent(WinActivity.this, MainActivity.class));
+        });
 
-        findViewById(R.id.btn_restart).setOnClickListener(view -> WinActivity.this.finish());
+        findViewById(R.id.btn_restart).setOnClickListener(view -> {
+            if (level1.equals("Easy")) {
+                startActivity(new Intent(WinActivity.this, EasyLevelActivity.class));
+
+            } else if (level1.equals("Medium")) {
+                startActivity(new Intent(WinActivity.this, MediumLevelActivity.class));
+
+            } else {
+                startActivity(new Intent(WinActivity.this, HardLevelActivity.class));
+            }
+        });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
     }
 }

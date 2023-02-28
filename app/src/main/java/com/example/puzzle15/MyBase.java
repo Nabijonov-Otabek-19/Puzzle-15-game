@@ -5,42 +5,84 @@ import android.content.SharedPreferences;
 
 public class MyBase {
 
+    private static MyBase instance;
+
     public static final String SHARED_PREF = "sharedPref";
-    public static final String LEVEL = "level";
-    public static final String TIME = "time";
-    public static final String SCORE = "score";
     public static final String SOUND = "sound";
+
+    public static final String EASY_TIME = "easyTime";
+    public static final String EASY_SCORE = "easyScore";
+
+    public static final String MEDIUM_TIME = "mediumTime";
+    public static final String MEDIUM_SCORE = "mediumScore";
+
+    public static final String HARD_TIME = "hardTime";
+    public static final String HARD_SCORE = "hardScore";
+
 
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
 
-    public MyBase(Context context) {
+    private MyBase(Context context) {
         pref = context.getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE);
         editor = pref.edit();
     }
 
-    public void setLevel(String level) {
-        editor.putString(LEVEL, level).apply();
+    public static MyBase getInstance() {
+        return instance;
     }
 
-    public String getLevel() {
-        return pref.getString(LEVEL, "...");
+    public static void initialize(Context context) {
+        if (instance == null) instance = new MyBase(context);
     }
 
-    public void setTime(String time) {
-        editor.putString(TIME, time).apply();
+
+    public void setEasyTime(String time) {
+        editor.putString(EASY_TIME, time).apply();
     }
 
-    public String getTime() {
-        return pref.getString(TIME, "00:00");
+    public String getEasyTime() {
+        return pref.getString(EASY_TIME, "00:00");
     }
 
-    public void setScore(String score) {
-        editor.putString(SCORE, score).apply();
+    public void setEasyScore(int score) {
+        editor.putInt(EASY_SCORE, score).apply();
     }
 
-    public String getScore() {
-        return pref.getString(SCORE, "0");
+    public int getEasyScore() {
+        return pref.getInt(EASY_SCORE, 0);
+    }
+
+    public void setMediumTime(String time) {
+        editor.putString(MEDIUM_TIME, time).apply();
+    }
+
+    public String getMediumTime() {
+        return pref.getString(MEDIUM_TIME, "00:00");
+    }
+
+    public void setMediumScore(int score) {
+        editor.putInt(MEDIUM_SCORE, score).apply();
+    }
+
+    public int getMediumScore() {
+        return pref.getInt(MEDIUM_SCORE, 0);
+    }
+
+    public void setHardTime(String time) {
+        editor.putString(HARD_TIME, time).apply();
+    }
+
+    public String getHardTime() {
+        return pref.getString(HARD_TIME, "00:00");
+    }
+
+    public void setHardScore(int time) {
+        editor.putInt(HARD_SCORE, time).apply();
+    }
+
+    public int getHardScore() {
+        return pref.getInt(HARD_SCORE, 0);
     }
 
     public void setSound(boolean is) {

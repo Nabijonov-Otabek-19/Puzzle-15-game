@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.puzzle15.Coordinate;
+import com.example.puzzle15.Music;
 import com.example.puzzle15.MyBase;
 import com.example.puzzle15.R;
 import com.example.puzzle15.screen.WinActivity;
@@ -47,8 +48,8 @@ public class HardLevelActivity extends AppCompatActivity {
         textScore = findViewById(R.id.text_score);
         textTime = findViewById(R.id.text_time);
 
-        music = new Music(this);
-        myBase = new MyBase(this);
+        music = Music.getInstance();
+        myBase = MyBase.getInstance();
 
         findViewById(R.id.btn_finish).setOnClickListener(view -> HardLevelActivity.this.finish());
 
@@ -151,11 +152,22 @@ public class HardLevelActivity extends AppCompatActivity {
             intent.putExtra("level", "Hard");
             startActivity(intent);
 
-            MyBase myBase = new MyBase(this);
-            myBase.setLevel("Easy");
-            myBase.setScore(textScore.getText().toString());
-            myBase.setTime(textTime.getText().toString());
+            setDataToRecords();
             restart();
         }
     }
+
+    private void setDataToRecords() {
+        int dbScore = myBase.getHardScore();
+        int currScore = Integer.parseInt(textScore.getText().toString());
+
+        if (dbScore != 0 && dbScore < currScore) {
+            myBase.setHardScore(Integer.parseInt(textScore.getText().toString()));
+            myBase.setHardTime(textTime.getText().toString());
+        } else if (dbScore == 0) {
+            myBase.setHardScore(Integer.parseInt(textScore.getText().toString()));
+            myBase.setHardTime(textTime.getText().toString());
+        }
+    }
+
 }

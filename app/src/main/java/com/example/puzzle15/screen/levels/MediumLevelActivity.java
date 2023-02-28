@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.puzzle15.Coordinate;
+import com.example.puzzle15.Music;
 import com.example.puzzle15.MyBase;
 import com.example.puzzle15.R;
 import com.example.puzzle15.screen.WinActivity;
@@ -48,8 +49,8 @@ public class MediumLevelActivity extends AppCompatActivity {
         textScore = findViewById(R.id.text_score);
         textTime = findViewById(R.id.text_time);
 
-        music = new Music(this);
-        myBase = new MyBase(this);
+        music = Music.getInstance();
+        myBase = MyBase.getInstance();
 
         findViewById(R.id.btn_finish).setOnClickListener(view -> MediumLevelActivity.this.finish());
         findViewById(R.id.btn_restart).setOnClickListener(v -> restart());
@@ -155,11 +156,21 @@ public class MediumLevelActivity extends AppCompatActivity {
             intent.putExtra("level", "Medium");
             startActivity(intent);
 
-            MyBase myBase = new MyBase(this);
-            myBase.setLevel("Easy");
-            myBase.setScore(textScore.getText().toString());
-            myBase.setTime(textTime.getText().toString());
+            setDataToRecords();
             restart();
+        }
+    }
+
+    private void setDataToRecords() {
+        int dbScore = myBase.getMediumScore();
+        int currScore = Integer.parseInt(textScore.getText().toString());
+
+        if (dbScore != 0 && dbScore < currScore) {
+            myBase.setMediumScore(Integer.parseInt(textScore.getText().toString()));
+            myBase.setMediumTime(textTime.getText().toString());
+        } else if (dbScore == 0) {
+            myBase.setMediumScore(Integer.parseInt(textScore.getText().toString()));
+            myBase.setMediumTime(textTime.getText().toString());
         }
     }
 }

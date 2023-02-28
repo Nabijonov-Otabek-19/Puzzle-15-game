@@ -5,10 +5,20 @@ import android.media.MediaPlayer;
 
 public class Music {
 
+    private static Music music;
     private final MediaPlayer clickAudio;
 
-    public Music(Context context) {
+    private Music(Context context) {
         clickAudio = MediaPlayer.create(context, R.raw.gate_click);
+    }
+
+    public static Music getInstance() {
+        return music;
+    }
+
+    public static void initialize(Context context) {
+        if (music == null) music = new Music(context);
+
     }
 
     public void makeSound() {
