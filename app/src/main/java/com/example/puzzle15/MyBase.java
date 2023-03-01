@@ -7,17 +7,17 @@ public class MyBase {
 
     private static MyBase instance;
 
-    public static final String SHARED_PREF = "sharedPref";
-    public static final String SOUND = "sound";
+    private static final String SHARED_PREF = "sharedPref";
+    private static final String SOUND = "sound";
 
-    public static final String EASY_TIME = "easyTime";
-    public static final String EASY_SCORE = "easyScore";
+    private static final String EASY_TIME = "easyTime";
+    private static final String EASY_SCORE = "easyScore";
 
-    public static final String MEDIUM_TIME = "mediumTime";
-    public static final String MEDIUM_SCORE = "mediumScore";
+    private static final String MEDIUM_TIME = "mediumTime";
+    private static final String MEDIUM_SCORE = "mediumScore";
 
-    public static final String HARD_TIME = "hardTime";
-    public static final String HARD_SCORE = "hardScore";
+    private static final String HARD_TIME = "hardTime";
+    private static final String HARD_SCORE = "hardScore";
 
 
     private SharedPreferences pref;

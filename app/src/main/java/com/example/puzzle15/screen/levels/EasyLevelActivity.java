@@ -1,5 +1,6 @@
 package com.example.puzzle15.screen.levels;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -29,9 +30,16 @@ public class EasyLevelActivity extends AppCompatActivity {
     private Button[][] items;
     private List<Integer> numbers;
     private Coordinate emptySpace;
-    private int score;
     private Music music;
     private MyBase myBase;
+
+    private final String SCORE = "score";
+    private final String TIME = "time";
+    private final String DATA = "data";
+
+    private String[] datas;
+    private int score = 0;
+    private long time = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +53,61 @@ public class EasyLevelActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        textScore.setText(String.valueOf(score));
+        textTime.setBase(SystemClock.elapsedRealtime() - time);
+
+        if (datas != null) {
+            int index = 0;
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if (datas[index].equals("0")) {
+                        emptySpace.setX(j);
+                        emptySpace.setY(i);
+                        items[i][j].setText("");
+                        items[i][j].setBackgroundResource(R.color.color_item_empty);
+                    } else {
+                        items[i][j].setText(datas[index]);
+                        items[i][j].setBackgroundResource(R.color.color_item);
+                    }
+                    index++;
+                }
+            }
+        }
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        score = savedInstanceState.getInt(SCORE, 0);
+        time = savedInstanceState.getLong(TIME, SystemClock.elapsedRealtime());
+        String text = savedInstanceState.getString(DATA, "");
+        datas = text.split("#");
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(DATA, getNumbers());
+        outState.putInt(SCORE, score);
+        outState.putLong(TIME, SystemClock.elapsedRealtime() - textTime.getBase());
+    }
+
+    private String getNumbers() {
+        StringBuilder str = new StringBuilder();
+        for (Button[] item : items) {
+            for (Button button : item) {
+                if (button.getText().toString().isEmpty())
+                    str.append(0).append("#");
+                else
+                    str.append(button.getText().toString()).append("#");
+            }
+        }
+        return str.toString();
+    }
+
 
     private void loadView() {
         textScore = findViewById(R.id.text_score);
@@ -54,9 +117,7 @@ public class EasyLevelActivity extends AppCompatActivity {
         myBase = MyBase.getInstance();
 
         findViewById(R.id.btn_finish).setOnClickListener(view -> EasyLevelActivity.this.finish());
-
         findViewById(R.id.btn_restart).setOnClickListener(v -> restart());
-
 
         final ViewGroup group = findViewById(R.id.container);
         final int count = group.getChildCount();
@@ -81,11 +142,9 @@ public class EasyLevelActivity extends AppCompatActivity {
     }
 
     private void dataToView() {
-        score = 0;
-        textScore.setText("0");
 
         Collections.shuffle(numbers);
-        items[emptySpace.getY()][emptySpace.getX()].setBackgroundResource(R.color.color_item);
+        items[emptySpace.getY()][emptySpace.getX()].setBackgroundResource(R.color.color_item_empty);
         emptySpace.setX(2);
         emptySpace.setY(2);
 
