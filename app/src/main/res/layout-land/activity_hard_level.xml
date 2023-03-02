@@ -27,43 +27,43 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn1"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:text="1" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn2"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_toEndOf="@id/btn1"
                     android:text="2" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn3"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_toEndOf="@id/btn2"
                     android:text="3" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn4"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_toEndOf="@id/btn3"
                     android:text="4" />
 
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn5"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_toEndOf="@id/btn4"
                     android:text="5" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn6"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn2"
                     android:text="6" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn7"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn1"
                     android:layout_toEndOf="@id/btn6"
                     android:text="7" />
@@ -71,123 +71,123 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn8"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn4"
                     android:layout_toEndOf="@id/btn7"
                     android:text="8" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn9"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn5"
                     android:layout_toEndOf="@id/btn8"
                     android:text="9" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn10"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn5"
                     android:layout_toEndOf="@id/btn9"
                     android:text="10" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn11"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn6"
                     android:text="11" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn12"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn6"
                     android:layout_toEndOf="@id/btn11"
                     android:text="12" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn13"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn8"
                     android:layout_toEndOf="@id/btn12"
                     android:text="13" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn14"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn9"
                     android:layout_toEndOf="@id/btn13"
                     android:text="14" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn15"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn9"
                     android:layout_toEndOf="@id/btn14"
                     android:text="15" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn16"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn11"
                     android:text="16" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn17"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn11"
                     android:layout_toEndOf="@id/btn16"
                     android:text="17" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn18"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn11"
                     android:layout_toEndOf="@id/btn17"
                     android:text="18" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn19"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn11"
                     android:layout_toEndOf="@id/btn18"
                     android:text="19" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn20"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn11"
                     android:layout_toEndOf="@id/btn19"
                     android:text="20" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn21"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn16"
                     android:text="21" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn22"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn16"
                     android:layout_toEndOf="@id/btn21"
                     android:text="22" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn23"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn16"
                     android:layout_toEndOf="@id/btn22"
                     android:text="23" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn24"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn16"
                     android:layout_toEndOf="@id/btn23"
                     android:text="24" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn25"
-                    style="@style/style_btn"
+                    style="@style/style_btn_hard"
                     android:layout_below="@id/btn20"
                     android:layout_toEndOf="@id/btn24"
                     android:background="@color/color_item_empty" />
