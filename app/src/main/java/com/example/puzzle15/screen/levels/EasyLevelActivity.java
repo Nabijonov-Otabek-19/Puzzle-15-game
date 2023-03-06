@@ -3,6 +3,7 @@ package com.example.puzzle15.screen.levels;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -108,7 +109,6 @@ public class EasyLevelActivity extends AppCompatActivity {
         return str.toString();
     }
 
-
     private void loadView() {
         textScore = findViewById(R.id.text_score);
         textTime = findViewById(R.id.text_time);
@@ -116,7 +116,16 @@ public class EasyLevelActivity extends AppCompatActivity {
         music = Music.getInstance();
         myBase = MyBase.getInstance();
 
-        findViewById(R.id.btn_finish).setOnClickListener(view -> EasyLevelActivity.this.finish());
+        findViewById(R.id.btn_finish).setOnClickListener(view -> {
+            new AlertDialog.Builder(this)
+                    .setTitle("Exit").setMessage("Do you want to finish game ?")
+                    .setPositiveButton("Yes", (dialogInterface, i) -> {
+                        EasyLevelActivity.this.onBackPressed();
+                    })
+                    .setNegativeButton("No", (dialogInterface, i) -> {
+                        dialogInterface.cancel();
+                    }).create().show();
+        });
         findViewById(R.id.btn_restart).setOnClickListener(v -> restart());
 
         final ViewGroup group = findViewById(R.id.container);

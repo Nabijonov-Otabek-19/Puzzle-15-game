@@ -3,6 +3,7 @@ package com.example.puzzle15.screen;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -39,7 +40,16 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_levels).setOnClickListener(view ->
                 startActivity(new Intent(MainActivity.this, LevelsActivity.class)));
 
-        findViewById(R.id.btn_quit).setOnClickListener(view -> MainActivity.this.finishAffinity());
+        findViewById(R.id.btn_quit).setOnClickListener(view -> {
+            new AlertDialog.Builder(this)
+                    .setTitle("Quit").setMessage("Do you really want to quit")
+                    .setPositiveButton("Yes", ((dialogInterface, i) -> {
+                        MainActivity.this.finishAffinity();
+                    }))
+                    .setNegativeButton("No", (dialogInterface, i) -> {
+                        dialogInterface.cancel();
+                    }).create().show();
+        });
 
         findViewById(R.id.btn_about).setOnClickListener(view ->
                 startActivity(new Intent(MainActivity.this, AboutActivity.class)));

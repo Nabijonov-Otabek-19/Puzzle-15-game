@@ -3,6 +3,7 @@ package com.example.puzzle15.screen.levels;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -116,7 +117,16 @@ public class MediumLevelActivity extends AppCompatActivity {
         music = Music.getInstance();
         myBase = MyBase.getInstance();
 
-        findViewById(R.id.btn_finish).setOnClickListener(view -> MediumLevelActivity.this.finish());
+        findViewById(R.id.btn_finish).setOnClickListener(view -> {
+            new AlertDialog.Builder(this)
+                    .setTitle("Exit").setMessage("Do you want to finish game ?")
+                    .setPositiveButton("Yes", (dialogInterface, i) -> {
+                        MediumLevelActivity.this.onBackPressed();
+                    })
+                    .setNegativeButton("No", (dialogInterface, i) -> {
+                        dialogInterface.cancel();
+                    }).create().show();
+        });
         findViewById(R.id.btn_restart).setOnClickListener(v -> restart());
 
         group = findViewById(R.id.container);
