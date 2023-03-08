@@ -1,4 +1,4 @@
-package com.example.puzzle15.screen;
+package uz.gita.puzzle15.screen;
 
 import androidx.appcompat.app.AppCompatActivity;
 

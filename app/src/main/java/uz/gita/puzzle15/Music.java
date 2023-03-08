@@ -1,7 +1,9 @@
-package com.example.puzzle15;
+package uz.gita.puzzle15;
 
 import android.content.Context;
 import android.media.MediaPlayer;
+
+import com.example.puzzle15.R;
 
 public class Music {
 

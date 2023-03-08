@@ -1,4 +1,4 @@
-package com.example.puzzle15;
+package uz.gita.puzzle15;
 
 import org.junit.Test;
 

@@ -1,18 +1,17 @@
-package com.example.puzzle15.screen;
+package uz.gita.puzzle15.screen;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.puzzle15.R;
-import com.example.puzzle15.screen.levels.EasyLevelActivity;
-import com.example.puzzle15.screen.levels.HardLevelActivity;
-import com.example.puzzle15.screen.levels.MediumLevelActivity;
+import uz.gita.puzzle15.screen.levels.EasyLevelActivity;
+import uz.gita.puzzle15.screen.levels.HardLevelActivity;
+import uz.gita.puzzle15.screen.levels.MediumLevelActivity;
 
 public class WinActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.puzzle15.screen;
+package uz.gita.puzzle15.screen;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,10 +6,9 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 
-import com.example.puzzle15.MyBase;
+import uz.gita.puzzle15.MyBase;
 import com.example.puzzle15.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.btn_levels).setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this, LevelsActivity.class));
-            onBackPressed();
         });
 
         findViewById(R.id.btn_quit).setOnClickListener(view -> {

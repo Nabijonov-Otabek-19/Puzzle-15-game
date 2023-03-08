@@ -1,4 +1,4 @@
-package com.example.puzzle15.screen.levels;
+package uz.gita.puzzle15.screen.levels;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,11 +14,11 @@ import android.widget.Chronometer;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.puzzle15.Coordinate;
-import com.example.puzzle15.Music;
-import com.example.puzzle15.MyBase;
+import uz.gita.puzzle15.Coordinate;
+import uz.gita.puzzle15.Music;
+import uz.gita.puzzle15.MyBase;
 import com.example.puzzle15.R;
-import com.example.puzzle15.screen.WinActivity;
+import uz.gita.puzzle15.screen.WinActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_photo2"
     android:orientation="vertical"
-    tools:context=".screen.WinActivity">
+    tools:context="uz.gita.puzzle15.screen.WinActivity">
 
     <LinearLayout
         android:layout_marginTop="8dp"
