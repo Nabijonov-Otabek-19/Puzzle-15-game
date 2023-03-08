@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.puzzle15'
+    namespace 'uz.gita.puzzle15_Bek'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.puzzle15"
+        applicationId "uz.gita.puzzle15_Bek"
         minSdk 26
         targetSdk 33
         versionCode 1
