@@ -37,8 +37,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.btn_levels).setOnClickListener(view ->
-                startActivity(new Intent(MainActivity.this, LevelsActivity.class)));
+        findViewById(R.id.btn_levels).setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, LevelsActivity.class));
+            onBackPressed();
+        });
 
         findViewById(R.id.btn_quit).setOnClickListener(view -> {
             new AlertDialog.Builder(this)

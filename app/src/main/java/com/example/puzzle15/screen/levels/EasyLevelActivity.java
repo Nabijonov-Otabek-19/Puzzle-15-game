@@ -151,9 +151,10 @@ public class EasyLevelActivity extends AppCompatActivity {
     }
 
     private void dataToView() {
+        textScore.setText("0");
 
         Collections.shuffle(numbers);
-        items[emptySpace.getY()][emptySpace.getX()].setBackgroundResource(R.color.color_item_empty);
+        items[emptySpace.getY()][emptySpace.getX()].setBackgroundResource(R.color.color_item);
         emptySpace.setX(2);
         emptySpace.setY(2);
 
@@ -226,6 +227,7 @@ public class EasyLevelActivity extends AppCompatActivity {
 
             setDataToRecords();
             restart();
+            finish();
         }
     }
 

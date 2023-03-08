@@ -1,5 +1,6 @@
 package com.example.puzzle15.screen;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -15,6 +16,8 @@ import com.example.puzzle15.screen.levels.MediumLevelActivity;
 
 public class WinActivity extends AppCompatActivity {
 
+    private TextView level2, time2, score2;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +29,18 @@ public class WinActivity extends AppCompatActivity {
         String score1 = intent.getStringExtra("score");
         String level1 = intent.getStringExtra("level");
 
-        TextView level2 = findViewById(R.id.txt_level);
+        level2 = findViewById(R.id.txt_level);
         level2.setText(level1);
 
-        TextView time2 = findViewById(R.id.txt_time);
+        time2 = findViewById(R.id.txt_time);
         time2.setText(time1);
 
-        TextView score2 = findViewById(R.id.txt_score);
+        score2 = findViewById(R.id.txt_score);
         score2.setText(score1);
 
         findViewById(R.id.btn_back2menu).setOnClickListener(view -> {
             startActivity(new Intent(WinActivity.this, MainActivity.class));
+            onBackPressed();
         });
 
         findViewById(R.id.btn_restart).setOnClickListener(view -> {
@@ -49,12 +53,23 @@ public class WinActivity extends AppCompatActivity {
             } else {
                 startActivity(new Intent(WinActivity.this, HardLevelActivity.class));
             }
+            onBackPressed();
         });
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-        finish();
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        level2.setText(savedInstanceState.getString("level", ""));
+        time2.setText(savedInstanceState.getString("time", ""));
+        score2.setText(savedInstanceState.getString("time", ""));
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("score", score2.getText().toString());
+        outState.putString("time", time2.getText().toString());
+        outState.putString("level", level2.getText().toString());
     }
 }

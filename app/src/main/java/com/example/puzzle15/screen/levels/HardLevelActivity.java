@@ -151,7 +151,7 @@ public class HardLevelActivity extends AppCompatActivity {
     }
 
     private void dataToView() {
-
+        textScore.setText("0");
         Collections.shuffle(numbers);
         items[emptySpace.getY()][emptySpace.getX()].setBackgroundResource(R.color.color_item);
         emptySpace.setX(4);

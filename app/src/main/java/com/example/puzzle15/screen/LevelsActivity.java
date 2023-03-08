@@ -28,6 +28,9 @@ public class LevelsActivity extends AppCompatActivity {
         findViewById(R.id.btn_hard).setOnClickListener(view ->
                 startActivity(new Intent(LevelsActivity.this, HardLevelActivity.class)));
 
-        findViewById(R.id.btn_back).setOnClickListener(view -> finish());
+        findViewById(R.id.btn_back).setOnClickListener(view -> {
+            startActivity(new Intent(this, MainActivity.class));
+            onBackPressed();
+        });
     }
 }
