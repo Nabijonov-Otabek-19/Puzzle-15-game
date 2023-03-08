@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import uz.gita.puzzle15.MyBase;
+
 import com.example.puzzle15.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,8 +24,10 @@ public class MainActivity extends AppCompatActivity {
         MyBase myBase = MyBase.getInstance();
         ImageView sound = findViewById(R.id.btn_sound);
 
-        if (myBase.getSound()) sound.setImageResource(R.drawable.ic_sound);
-        else sound.setImageResource(R.drawable.ic_mute);
+        if (myBase.getSound()) {
+            sound.setImageResource(R.drawable.ic_sound);
+
+        } else sound.setImageResource(R.drawable.ic_mute);
 
         sound.setOnClickListener(view -> {
             if (myBase.getSound()) {
@@ -41,14 +44,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.btn_quit).setOnClickListener(view -> {
-            new AlertDialog.Builder(this)
-                    .setTitle("Quit").setMessage("Do you really want to quit")
-                    .setPositiveButton("Yes", ((dialogInterface, i) -> {
-                        MainActivity.this.finishAffinity();
-                    }))
-                    .setNegativeButton("No", (dialogInterface, i) -> {
-                        dialogInterface.cancel();
-                    }).create().show();
+            finishAffinity();
         });
 
         findViewById(R.id.btn_about).setOnClickListener(view ->

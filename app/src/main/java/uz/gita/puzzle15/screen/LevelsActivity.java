@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.puzzle15.R;
+
 import uz.gita.puzzle15.screen.levels.EasyLevelActivity;
 import uz.gita.puzzle15.screen.levels.HardLevelActivity;
 import uz.gita.puzzle15.screen.levels.MediumLevelActivity;
@@ -29,7 +30,6 @@ public class LevelsActivity extends AppCompatActivity {
                 startActivity(new Intent(LevelsActivity.this, HardLevelActivity.class)));
 
         findViewById(R.id.btn_back).setOnClickListener(view -> {
-            startActivity(new Intent(this, MainActivity.class));
             onBackPressed();
         });
     }

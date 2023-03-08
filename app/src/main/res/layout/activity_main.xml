@@ -18,7 +18,8 @@
             android:id="@+id/btn_sound"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_sound" />
+            android:src="@drawable/ic_sound"
+            app:tint="@color/white" />
 
     </LinearLayout>
 
